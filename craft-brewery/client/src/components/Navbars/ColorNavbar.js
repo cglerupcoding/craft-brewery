@@ -7,13 +7,13 @@ import Headroom from "headroom.js";
 // reactstrap components
 import {
   Collapse,
-  DropdownToggle,
-  UncontrolledDropdown,
+  Button,
   NavbarBrand,
   Navbar,
   Nav,
   Container,
-  UncontrolledTooltip
+  NavItem,
+  NavLink
 } from "reactstrap";
 // core components
 
@@ -65,9 +65,7 @@ function ColorNavbar() {
             <NavbarBrand id="navbar-brand" to="/index" tag={Link}>
               Craft Brewery
             </NavbarBrand>
-            <UncontrolledTooltip placement="bottom" target="navbar-brand">
-            Craft Brewery
-            </UncontrolledTooltip>
+
             <button
               className="navbar-toggler"
               id="navigation"
@@ -85,22 +83,23 @@ function ColorNavbar() {
           </div>
           <Collapse navbar isOpen={collapseOpen}>
             <Nav className="ml-auto" navbar>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle className="mr-2" color="default" caret nav>
-                  Home
-                </DropdownToggle>
-              </UncontrolledDropdown>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle className="mr-2" color="default" caret nav>
-                  Events
-                </DropdownToggle>
-              </UncontrolledDropdown>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle color="default" caret nav>
-                  Find a Brewery
-                </DropdownToggle>
-              </UncontrolledDropdown>
 
+              <NavItem>
+                <NavLink href="/social/">Profile</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/settings/">Settings</NavLink>
+              </NavItem>
+              <NavItem>
+                <Button
+                  className="btn-round"
+                  color="danger"
+                  href="/register-page/"
+                  target="_blank"
+                >
+                  <i className="nc-icon users-circle-08" /> Login
+                </Button>
+              </NavItem>
             </Nav>
           </Collapse>
         </Container>

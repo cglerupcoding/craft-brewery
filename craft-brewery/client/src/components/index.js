@@ -16,7 +16,7 @@ import LoginPage from "views/examples/LoginPage.js";
 import ProfilePage from "views/examples/ProfilePage.js";
 import RegisterPage from "views/examples/RegisterPage.js";
 import Settings from "views/examples/Settings";
-import TwitterRedesign from "views/examples/TwitterRedesign.js";
+import MapScreen from "views/components/map.js";
 // others
 
 ReactDOM.render(
@@ -28,13 +28,13 @@ ReactDOM.render(
       />
       <Route path="/error-422" render={props => <Error422 {...props} />} />
       <Route path="/error-500" render={props => <Error500 {...props} />} />
+      <Route path="/map" render={props => <MapScreen {...props} />} />
       <Route
         path="/landing-page"
         render={props => <LandingPage {...props} />}
       />
       <Route path="/login-page" render={props => <LoginPage {...props} />} />
       <Route path="/settings" render={props => <Settings {...props} />} />
-      <Route path="/social" render={props => <TwitterRedesign {...props} />} />
       <Route
         path="/profile-page"
         render={props => <ProfilePage {...props} />}

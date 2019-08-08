@@ -7,13 +7,13 @@ import Headroom from "headroom.js";
 // reactstrap components
 import {
   Collapse,
-  DropdownToggle,
-  UncontrolledDropdown,
+  Button,
   NavbarBrand,
   Navbar,
   Nav,
   Container,
-  UncontrolledTooltip
+  NavItem,
+  NavLink
 } from "reactstrap";
 
 // core components
@@ -67,9 +67,7 @@ function MultiDropdownNavbar() {
             <NavbarBrand id="navbar-brand" to="/index" tag={Link}>
               Craft Brewery
             </NavbarBrand>
-            <UncontrolledTooltip placement="bottom" target="navbar-brand">
-              Craft Brewery
-            </UncontrolledTooltip>
+
             <button
               className="navbar-toggler"
               id="navigation"
@@ -87,21 +85,24 @@ function MultiDropdownNavbar() {
           </div>
           <Collapse navbar isOpen={collapseOpen}>
             <Nav className="ml-auto" navbar>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle color="default" caret nav>
-                  Events
-                </DropdownToggle>
-              </UncontrolledDropdown>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle className="mr-2" color="default" caret nav>
-                  Find a Brewery
-                </DropdownToggle>
-              </UncontrolledDropdown>
-              <UncontrolledDropdown nav inNavbar>
-                <DropdownToggle className="mr-2" color="default" caret nav>
-                  Login
-                </DropdownToggle>
-              </UncontrolledDropdown>
+
+            <NavItem>
+                <NavLink href="/social/">Profile</NavLink>
+              </NavItem>
+              <NavItem>
+                <NavLink href="/settings/">Settings</NavLink>
+              </NavItem>
+              <NavItem>
+                <Button
+                  className="btn-round"
+                  color="danger"
+                  href="/register-page/"
+                  target="_blank"
+                >
+                  <i className="nc-icon nc-cart-simple" /> Login
+                </Button>
+              </NavItem>
+
             </Nav>
           </Collapse>
         </Container>
