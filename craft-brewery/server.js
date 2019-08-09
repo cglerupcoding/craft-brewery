@@ -10,6 +10,10 @@ const dotenv = require('dotenv').config();
 const router = express.Router();
 const profileRouter = require('./controllers/profiles');
 const eventRouter = require('./controllers/events');
+const morgan = require ('morgan');
+const http = require ('http');
+
+
 //Require our routes file pass through our router
 //require("./config/routes")(router);
 
@@ -26,7 +30,9 @@ mongoose.connect(config.DB, { useNewUrlParser: true }).then(
 // Define middleware here
 app.use(cors());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+app.use (bodyParser.json({type: '*/*'}));
+app.use (morgan('combined'));
+
 
 //To have the requests go through the router middleware
 app.use(router);

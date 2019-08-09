@@ -22,7 +22,8 @@ const ProfileSchema = new Schema({
     email: {
         type: String,
         unique: true,
-        match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
+        match: [/.+@.+\..+/, "Please enter a valid e-mail address"],
+        lowercase: true
     },
     password: {
         type: String,
@@ -51,6 +52,31 @@ const ProfileSchema = new Schema({
         default: Date.now
     }
 });
+// on Save Hook, encrypt password
+// Before saving a model, run this function
+ProfileSchema.pre('save', function(next) {
+    // get access to the Profile model 
+    const Profile = this;
+    // generate a salt then run callback
+    bcrypt.genSalt(10, function(err, salt){
+        if (err) { return next(err); }
+        // Hash (encrypt) our password using the salt
+        bcrypt.hash(Profile.password, salt, null, function(err, hash){
+            if(err) { return next(err); }
+            // overwrite plain text password with encrypted password
+            Profile.Password = hash;
+            // save the model
+            next();
+        });
+    });
+});
+
+ProfileSchema.methods.comparePassword = function(candidatePassword, callback) {
+    bcrypt.compare(candidatePassword, this.password, function(err, isMatch){
+        if (err) { return callback(err); }
+        callback(null, isMatch);
+    });
+}
 
 // This creates our model from the above schema, using mongoose's model method
 const Profile = mongoose.model("Profile", ProfileSchema);
