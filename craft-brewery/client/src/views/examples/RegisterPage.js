@@ -9,6 +9,8 @@ import {
   Input,
   Container,
   Row,
+  NavItem,
+  NavLink,
   Col
 } from "reactstrap";
 
@@ -79,22 +81,11 @@ function RegisterPage() {
               <Col className="mr-auto" lg="6" md="6" sm="5" xs="12">
                 <Card className="card-register">
                   <CardTitle className="text-center" tag="h3">
-                    Register
+                    Create a Profile
                   </CardTitle>
-                  <div className="social">
-                    <Button className="btn-just-icon mr-1" color="facebook">
-                      <i className="fa fa-facebook" />
-                    </Button>
-                    <Button className="btn-just-icon mr-1" color="google">
-                      <i className="fa fa-google" />
-                    </Button>
-                    <Button className="btn-just-icon" color="twitter">
-                      <i className="fa fa-twitter" />
-                    </Button>
-                  </div>
                   <div className="division">
                     <div className="line l" />
-                    <span>or</span>
+                
                     <div className="line r" />
                   </div>
                   <Form className="register-form">
@@ -110,13 +101,9 @@ function RegisterPage() {
                     </Button>
                   </Form>
                   <div className="login">
-                    <p>
-                      Already have an account?{" "}
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
-                        Log in
-                      </a>
-                      .
-                    </p>
+                <NavItem>
+                <NavLink href="/login-page/">Already have an account? login</NavLink>
+                </NavItem>                
                   </div>
                 </Card>
               </Col>

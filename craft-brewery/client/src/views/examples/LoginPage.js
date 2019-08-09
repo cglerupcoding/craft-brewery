@@ -35,7 +35,7 @@ function LoginPage() {
           className="page-header"
           style={{
             backgroundImage:
-              "url(" + require("assets/img/bitter.jfif") + ")"
+              "url(" + require("assets/img/login.jpeg") + ")"
           }}
         >
           <div className="filter" />
@@ -77,7 +77,7 @@ function LoginPage() {
             <div className="demo-footer text-center">
               <h6>
                 © {new Date().getFullYear()}, made with{" "}
-                <i className="fa fa-heart heart" /> by Creative Tim
+                <i className="fa fa-beer beer" /> by Team Dysfunctional
               </h6>
             </div>
           </Container>

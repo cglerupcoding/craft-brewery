@@ -18,7 +18,8 @@
     "react-scripts": "3.0.1",
     "react-select": "3.0.4",
     "react-tagsinput": "3.19.0",
-    "reactstrap": "8.0.0"
+    "reactstrap": "8.0.0",
+    "proxy": "http://localhost:3001/"
   },
   "scripts": {
     "start": "react-scripts start",

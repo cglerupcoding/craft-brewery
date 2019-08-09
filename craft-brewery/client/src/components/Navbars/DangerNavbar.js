@@ -38,7 +38,7 @@ function WhiteNavbar() {
         <Container>
           <div className="navbar-translate">
             <NavbarBrand id="navbar-brand" to="/index" tag={Link}>
-              Craft Brewery
+              Tap It DFW
             </NavbarBrand>
 
             <button
@@ -71,10 +71,20 @@ function WhiteNavbar() {
                 <Button
                   className="btn-round"
                   color="danger"
-                  href="/register-page/"
+                  href="/login-page/"
                   target="_blank"
                 >
                   <i className="nc-icon nc-cart-simple" /> Login
+                </Button>
+              </NavItem>
+              <NavItem>
+                <Button
+                  className="btn-round"
+                  color="danger"
+                  href="/register-page/"
+                  target="_blank"
+                >
+                  <i className="nc-icon nc-cart-simple" /> Create A Profile
                 </Button>
               </NavItem>
             </Nav>

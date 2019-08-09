@@ -65,7 +65,7 @@ function MultiDropdownNavbar() {
         <Container>
           <div className="navbar-translate">
             <NavbarBrand id="navbar-brand" to="/index" tag={Link}>
-              Craft Brewery
+              Tap It DFW
             </NavbarBrand>
 
             <button
@@ -86,7 +86,7 @@ function MultiDropdownNavbar() {
           <Collapse navbar isOpen={collapseOpen}>
             <Nav className="ml-auto" navbar>
 
-            <NavItem>
+              <NavItem>
                 <NavLink href="/social/">Profile</NavLink>
               </NavItem>
               <NavItem>
@@ -96,10 +96,20 @@ function MultiDropdownNavbar() {
                 <Button
                   className="btn-round"
                   color="danger"
-                  href="/register-page/"
+                  href="/login-page/"
                   target="_blank"
                 >
                   <i className="nc-icon nc-cart-simple" /> Login
+                </Button>
+              </NavItem>
+              <NavItem>
+                <Button
+                  className="btn-round"
+                  color="danger"
+                  href="/register-page/"
+                  target="_blank"
+                >
+                  <i className="nc-icon nc-cart-simple" /> Create A Profile
                 </Button>
               </NavItem>
 

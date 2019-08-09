@@ -20,6 +20,9 @@ import {
   Container,
   Row,
   Col,
+  Input,
+  Form,
+  FormGroup,
   UncontrolledTooltip
 } from "reactstrap";
 
@@ -133,7 +136,7 @@ function TwitterRedesign() {
                           toggle("2");
                         }}
                       >
-                        Connections
+                        View All Events in your City
                       </NavLink>
                     </NavItem>
                     <NavItem>
@@ -143,7 +146,7 @@ function TwitterRedesign() {
                           toggle("3");
                         }}
                       >
-                        Media
+                        Add Events in your City
                       </NavLink>
                     </NavItem>
                   </Nav>
@@ -927,9 +930,6 @@ function TwitterRedesign() {
                                   Saved Events can go here
                                 </a>
                               </li>
-                              <li>
-                                
-                              </li>
                             </ul>
                           </div>
                         </CardBody>
@@ -938,10 +938,36 @@ function TwitterRedesign() {
                     </Col>
                   </Row>
                 </TabPane>
-                <TabPane tabId="2" id="connections" role="tabpanel" />
+               
+                <TabPane tabId="2" id="connections" role="tabpanel">
+                <Col md="3" sm="3">
+                      <FormGroup>
+                        <Form>
+                        <label>City</label>
+                        <Input
+                          className="border-input"
+                          placeholder="City"
+                          type="text"
+                        />
+                         
+                        <label>City</label>
+                        <Input
+                          className="border-input"
+                          placeholder="City"
+                          type="text"
+                          
+                        />
+                         </Form>
+                         </FormGroup>
+                        </Col>
+                    
+               
+                      </TabPane>
+                 
                 <TabPane tabId="3" id="media" role="tabpanel" />
               </TabContent>
             </div>
+            
           </Container>
         </div>
       </div>

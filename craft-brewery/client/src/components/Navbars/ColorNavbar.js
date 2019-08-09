@@ -63,7 +63,7 @@ function ColorNavbar() {
         <Container>
           <div className="navbar-translate">
             <NavbarBrand id="navbar-brand" to="/index" tag={Link}>
-              Craft Brewery
+              Tap It DFW
             </NavbarBrand>
 
             <button
@@ -88,7 +88,17 @@ function ColorNavbar() {
                 <NavLink href="/social/">Profile</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/settings/">Settings</NavLink>
+                <NavLink href="/social/">Settings</NavLink>
+              </NavItem>
+              <NavItem>
+                <Button
+                  className="btn-round"
+                  color="danger"
+                  href="/login-page/"
+                  target="_blank"
+                >
+                  <i className="nc-icon nc-cart-simple" /> Login
+                </Button>
               </NavItem>
               <NavItem>
                 <Button
@@ -97,7 +107,7 @@ function ColorNavbar() {
                   href="/register-page/"
                   target="_blank"
                 >
-                  <i className="nc-icon users-circle-08" /> Login
+                  <i className="nc-icon nc-cart-simple" /> Create A Profile
                 </Button>
               </NavItem>
             </Nav>
