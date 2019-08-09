@@ -3,8 +3,6 @@ const Profile = require("../models/profileSchemaModel");
 const express = require("express");
 const router = express.Router();
 
-
-
 router.get('/profiles/:id', function(req, res){
     Profile.findOne({ _id: req.params.id })
 	.then(function(dbProfile) {
