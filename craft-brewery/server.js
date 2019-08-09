@@ -8,7 +8,8 @@ const PORT = process.env.PORT || 3001;
 const app = express();
 const dotenv = require('dotenv').config();
 const router = express.Router();
-const profileRouter = require('./controllers/profiles')
+const profileRouter = require('./controllers/profiles');
+const eventRouter = require('./controllers/events');
 //Require our routes file pass through our router
 //require("./config/routes")(router);
 
@@ -55,6 +56,8 @@ if (process.env.NODE_ENV === "production") {
 const apiRoutes = require('./controllers/beers-api');
 app.use('/api', apiRoutes);
 app.use(profileRouter);
+app.use(eventRouter);
+
 // Define any API routes before this runs
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
