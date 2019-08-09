@@ -39,7 +39,7 @@ function LandingPage() {
             <Row>
               <Col className="ml-auto mr-auto" md="8">
                 <h2 className="title">My Events</h2>
-        {/* section */}
+        section
         <div className="section section-blog">
           <Container>
             <Row>

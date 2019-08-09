@@ -86,33 +86,18 @@ function MultiDropdownNavbar() {
           <Collapse navbar isOpen={collapseOpen}>
             <Nav className="ml-auto" navbar>
 
-              <NavItem>
+            <NavItem>
                 <NavLink href="/social/">Profile</NavLink>
               </NavItem>
               <NavItem>
                 <NavLink href="/settings/">Settings</NavLink>
               </NavItem>
               <NavItem>
-                <Button
-                  className="btn-round"
-                  color="danger"
-                  href="/login-page/"
-                  target="_blank"
-                >
-                  <i className="nc-icon nc-cart-simple" /> Login
-                </Button>
+                <NavLink href="/login-page/">Login</NavLink>
               </NavItem>
               <NavItem>
-                <Button
-                  className="btn-round"
-                  color="danger"
-                  href="/register-page/"
-                  target="_blank"
-                >
-                  <i className="nc-icon nc-cart-simple" /> Create A Profile
-                </Button>
-              </NavItem>
-
+                <NavLink href="/register-page/">Create a Profile</NavLink>
+            </NavItem>
             </Nav>
           </Collapse>
         </Container>

@@ -940,7 +940,272 @@ function TwitterRedesign() {
                 </TabPane>
                
                 <TabPane tabId="2" id="connections" role="tabpanel">
-                <Col md="3" sm="3">
+
+                <Row>
+                    <Col md="8">
+                      <div className="tweets">
+                        <Media className="last-media">
+                          <a
+                            className="pull-left"
+                            href="#pablo"
+                            onClick={e => e.preventDefault()}
+                          >
+                            <div className="avatar">
+                              <Media
+                                alt="..."
+                                object
+                                src={require("assets/img/cheers.jpeg")}
+                              />
+                            </div>
+                            <div className="retweet">
+                              <Button
+                                className="btn-just-icon"
+                                color="success"
+                                id="tooltip673539083"
+                                size="sm"
+                              >
+                                <i className="fa fa-retweet" />
+                              </Button>
+                              <UncontrolledTooltip
+                                delay={0}
+                                target="tooltip673539083"
+                              >
+                                Follow
+                              </UncontrolledTooltip>
+                            </div>
+                          </a>
+                          <Media body>
+                            <strong className="mr-1">billboard</strong>
+                            <Media heading tag="h5">
+                              <small>@billboard · 1 Jul 2016</small>
+                            </Media>
+                            <p>
+                              <a
+                                href="#pablo"
+                                onClick={e => e.preventDefault()}
+                              >
+                                @Jacov
+                              </a>{" "}
+                              has become the first artist to surpass RIAA's 100
+                              million cumulative singles award threshold:{" "}
+                              <a
+                                href="http://blbrd.cm/3rQ3Iq?ref=creativetim"
+                                target="_blank"
+                              >
+                                {`http://blbrd.cm/3rQ3Iq`}
+                              </a>
+                            </p>
+                            <div className="media-footer">
+                              <Button
+                                color="link"
+                                href="#pablo"
+                                onClick={e => e.preventDefault()}
+                              >
+                                <i className="fa fa-reply" />
+                              </Button>
+                              <Button
+                                color="link"
+                                href="#pablo"
+                                onClick={e => e.preventDefault()}
+                              >
+                                <i className="fa fa-retweet" />
+                                5.6K
+                              </Button>
+                              <Button
+                                className="btn-link"
+                                color="danger"
+                                href="#pablo"
+                                onClick={e => e.preventDefault()}
+                              >
+                                <i className="fa fa-heart" />
+                                7.2K
+                              </Button>
+                              <UncontrolledDropdown>
+                                <DropdownToggle
+                                  className="btn-icon"
+                                  color="link"
+                                  size="lg"
+                                >
+                                  <i className="fa fa-ellipsis-h" />
+                                </DropdownToggle>
+                                <DropdownMenu right>
+                                  <DropdownItem>
+                                    <a
+                                      href="#pablo"
+                                      onClick={e => e.preventDefault()}
+                                    >
+                                      <Row>
+                                        <Col sm="2">
+                                          <span className="icon-simple">
+                                            <i className="fa fa-envelope" />
+                                          </span>
+                                        </Col>
+                                        <Col sm="9">Direct Message</Col>
+                                      </Row>
+                                    </a>
+                                  </DropdownItem>
+                                  <DropdownItem>
+                                    <a
+                                      href="#pablo"
+                                      onClick={e => e.preventDefault()}
+                                    >
+                                      <Row>
+                                        <Col sm="2">
+                                          <span className="icon-simple">
+                                            <i className="fa fa-microphone-slash" />
+                                          </span>
+                                        </Col>
+                                        <Col sm="9">Mute</Col>
+                                      </Row>
+                                    </a>
+                                  </DropdownItem>
+                                  <DropdownItem>
+                                    <a
+                                      href="#pablo"
+                                      onClick={e => e.preventDefault()}
+                                    >
+                                      <Row>
+                                        <Col sm="2">
+                                          <span className="icon-simple">
+                                            <i className="fa fa-exclamation-circle" />
+                                          </span>
+                                        </Col>
+                                        <Col sm="9">Report</Col>
+                                      </Row>
+                                    </a>
+                                  </DropdownItem>
+                                </DropdownMenu>
+                              </UncontrolledDropdown>
+                            </div>
+                          </Media>
+                        </Media>
+                        {/* end media */}
+                        <br />
+                        <div className="text-center">
+
+                        </div>
+                      </div>
+                    </Col>
+                    <Col md="4" sm="6">
+                      <Card className="card-with-shadow">
+                        <CardBody>
+                          <CardTitle tag="h5">
+                            Upcoming Events ·{" "}
+                            <small>
+                              <a
+                                className="link-info"
+                                href="#pablo"
+                                onClick={e => e.preventDefault()}
+                              >
+                                View all
+                              </a>
+                            </small>
+                          </CardTitle>
+                          <div className="accounts-suggestion">
+                            <ul className="list-unstyled">
+                              <li className="account">
+                                <Row>
+                                  <Col md="3">
+                                    <div className="avatar">
+                                    </div>
+                                  </Col>
+                                  <Col className="description-section" md="7">
+                                    <span>
+                                     API CALL TO EVENTS CAN GO HERE{" "}
+                                      
+                                    </span>
+                                    <br />
+                                    <span className="text-muted">
+                              
+                                    </span>
+                                  </Col>
+                                  <Col className="follow" md="2">
+                                    <Button
+                                      className="btn-just-icon"
+                                      color="info"
+                                      outline
+                                      size="sm"
+                                    >
+                                      <i className="fa fa-plus" />
+                                    </Button>
+                                  </Col>
+                                </Row>
+                              </li>
+                              <li className="account">
+                                <Row>
+                                  <Col md="3">
+                                   </Col>
+                                  <Col className="description-section" md="7">
+                                   
+                                    <br />
+                                    
+                                  </Col>
+                                  <Col className="follow" md="2">
+                                    <Button
+                                      className="btn-just-icon"
+                                      color="info"
+                                      outline
+                                      size="sm"
+                                    >
+                                      <i className="fa fa-plus" />
+                                    </Button>
+                                  </Col>
+                                </Row>
+                              </li>
+                              <li className="account">
+                                <Row>
+                                  <Col md="3">
+                                    <div className="avatar">
+
+                                    </div>
+                                  </Col>
+                                  <Col className="description-section" md="7">
+
+                                  </Col>
+                                  <Col className="follow" md="2">
+                                    <Button
+                                      className="btn-just-icon"
+                                      color="info"
+                                      outline
+                                      size="sm"
+                                    >
+                                      <i className="fa fa-plus" />
+                                    </Button>
+                                  </Col>
+                                </Row>
+                              </li>
+                            </ul>
+                          </div>
+                        </CardBody>
+                      </Card>
+                      {/* end card */}
+                      <Card className="card-with-shadow">
+                        <CardBody>
+                          <CardTitle tag="h5">
+                            My Events ·{" "}
+
+                          </CardTitle>
+                          <div className="hashtag-suggestions">
+                            <ul className="list-unstyled">
+                              <li>
+                               
+                              </li>
+                              <li>
+                                <a
+                                  href="#pablo"
+                                  onClick={e => e.preventDefault()}
+                                >
+                                  Saved Events can go here
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+                        </CardBody>
+                      </Card>
+                      {/* end card */}
+                    </Col>
+                  </Row>
+                {/* <Col md="3" sm="3">
                       <FormGroup>
                         <Form>
                         <label>City</label>
@@ -959,7 +1224,7 @@ function TwitterRedesign() {
                         />
                          </Form>
                          </FormGroup>
-                        </Col>
+                        </Col> */}
                     
                
                       </TabPane>
