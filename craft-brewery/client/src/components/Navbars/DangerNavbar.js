@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import GoogleAuth from "../GoogleAuth.js"
 // JavaScript plugin that hides or shows a component based on your scroll
 import Headroom from "headroom.js";
 // reactstrap components
@@ -64,12 +65,8 @@ function WhiteNavbar() {
               <NavItem>
                 <NavLink href="/settings/">Settings</NavLink>
               </NavItem>
-              <NavItem>
-                <NavLink href="/login-page/">Login</NavLink>
-              </NavItem>
-              <NavItem>
-                <NavLink href="/register-page/">Create a Profile</NavLink>
-            </NavItem>
+              <div> <GoogleAuth /> </div>
+
             </Nav>
           </Collapse>
         </Container>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+// import GoogleAuth from "../GoogleAuth.js"
 // nodejs library that concatenates strings
 import classnames from "classnames";
 // JavaScript plugin that hides or shows a component based on your scroll
@@ -7,7 +8,7 @@ import Headroom from "headroom.js";
 // reactstrap components
 import {
   Collapse,
-  Button,
+  // Button,
   NavbarBrand,
   Navbar,
   Nav,
@@ -93,11 +94,11 @@ function MultiDropdownNavbar() {
                 <NavLink href="/settings/">Settings</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/login-page/">Login</NavLink>
+                <NavLink href="/settings/">login</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/register-page/">Create a Profile</NavLink>
-            </NavItem>
+                <NavLink href="/settings/">Create a Profile</NavLink>
+              </NavItem>
             </Nav>
           </Collapse>
         </Container>

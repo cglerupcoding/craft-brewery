@@ -17,7 +17,7 @@ import {
 } from "reactstrap";
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
+import MultiDropdownNavbar from "components/Navbars/MultiDropdownNavbar.js";
 import ProfilePageHeader from "components/Headers/ProfilePageHeader.js";
 import FooterWhite from "components/Footers/FooterWhite.js";
 
@@ -39,7 +39,7 @@ function ProfilePage() {
   });
   return (
     <>
-      <ColorNavbar />
+      <MultiDropdownNavbar />
       <ProfilePageHeader />
       <div className="wrapper">
         <div className="profile-content section">

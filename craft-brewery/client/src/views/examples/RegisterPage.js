@@ -1,5 +1,5 @@
 import React from "react";
-import Axios from "axios"
+
 // reactstrap components
 import {
   Button,
@@ -15,7 +15,7 @@ import {
 } from "reactstrap";
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
+import MultiDropdownNavbar from "components/Navbars/MultiDropdownNavbar.js";
 
 function RegisterPage() {
   document.documentElement.classList.remove("nav-open");
@@ -31,7 +31,7 @@ function RegisterPage() {
   });
   return (
     <>
-      <ColorNavbar />
+      <MultiDropdownNavbar />
       <div className="wrapper">
         <div
           className="page-header"
@@ -97,7 +97,7 @@ function RegisterPage() {
                     <Input placeholder="Password" type="password" />
                     <Input placeholder="Confirm Password" type="password" />
                     <Button block className="btn-round" color="default">
-                      Register
+                      Submit
                     </Button>
                   </Form>
                   <div className="login">
