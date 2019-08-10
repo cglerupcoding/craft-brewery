@@ -194,12 +194,12 @@ function LandingPage() {
         </div>
         <div className="section section-dark text-center landing-section">
           <Container>
-            <h2 className="title">Most Reccomended Breweries</h2>
+            <h2 className="title">Our Favorite Local Breweries</h2>
             <Row>
               <Col md="4">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="https://www.deepellumbrewing.com/" target="_blank">
                       <img
                         alt="..."
                         src={require("assets/img/deep.png")}
@@ -216,7 +216,7 @@ function LandingPage() {
                       </div>
                     </a>
                     <p className="card-description text-center">
-                    LARGEST INDEPENDENT BREWERY IN NORTH TEXAS AND PROUD HOME OF DALLAS BLONDE, DEEP ELLUM IPA, AND SO MANY MORE.
+                    Largest independent brewery in North Texas and proud home of Dallas Blonde, Deep Ellum IPA, and many more stellar beers.
                     </p>
                   </CardBody>
                   <CardFooter className="text-center">
@@ -250,19 +250,19 @@ function LandingPage() {
               <Col md="4">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="https://rahrbrewing.com/" target="_blank">
                       <img
                         alt="..."
-                        src={require("assets/img/bitter.jfif")}
+                        src={require("assets/img/Rahr-Brewery.jpg")}
                       />
                     </a>
                   </div>
                   <CardBody>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
-                        <CardTitle tag="h4">Bitter Sisters Brewery</CardTitle>
+                        <CardTitle tag="h4">Rahr & Sons Brewery</CardTitle>
                         <br />
-                        <h6 className="card-category text-muted">Addison, TX</h6>
+                        <h6 className="card-category text-muted">Fort Worth, TX</h6>
                       </div>
                     </a>
                     <p className="card-description text-center">
@@ -302,17 +302,17 @@ function LandingPage() {
               <Col md="4">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="https://www.communitybeer.com/" target="_blank">
                       <img
                         alt="..."
-                        src={require("assets/img/outfit.jfif")}
+                        src={require("assets/img/community.jpg")}
                       />
                     </a>
                   </div>
                   <CardBody>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
-                        <CardTitle tag="h4">Outfit Brewery</CardTitle>
+                        <CardTitle tag="h4">Community Beer Co.</CardTitle>
                         <h6 className="card-category text-muted">Dallas, TX</h6>
                       </div>
                     </a>
