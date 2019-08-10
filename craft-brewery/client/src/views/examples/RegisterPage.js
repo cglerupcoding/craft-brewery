@@ -88,7 +88,7 @@ function RegisterPage() {
                 
                     <div className="line r" />
                   </div>
-                  <Form className="register-form">
+                  <Form className="register-form" action="mongodb://localhost:27017/profiledb" method="POST">
                     <Input placeholder="Name" type="text" name="name" />
                     <Input placeholder="Email" type="text" name="email" />
                     <Input placeholder="Birthday" type="date" name="birthday"/>
