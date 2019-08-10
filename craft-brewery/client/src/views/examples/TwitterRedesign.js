@@ -27,7 +27,7 @@ import {
 } from "reactstrap";
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
+import MultiDropdownNavbar from "components/Navbars/MultiDropdownNavbar.js";
 import TwitterRedesignHeader from "components/Headers/TwitterRedesignHeader.js";
 import FooterWhite from "components/Footers/FooterWhite.js";
 
@@ -49,7 +49,7 @@ function TwitterRedesign() {
   });
   return (
     <>
-      <ColorNavbar />
+      <MultiDropdownNavbar />
       <div className="wrapper">
         <TwitterRedesignHeader />
         <div className="profile-content section-white-gray">

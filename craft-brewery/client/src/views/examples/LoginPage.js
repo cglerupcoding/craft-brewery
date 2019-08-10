@@ -13,7 +13,7 @@ import {
 } from "reactstrap";
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
+import MultiDropdownNavbar from "components/Navbars/MultiDropdownNavbar.js";
 
 function LoginPage() {
   document.documentElement.classList.remove("nav-open");
@@ -29,7 +29,7 @@ function LoginPage() {
   });
   return (
     <>
-      <ColorNavbar />
+      <MultiDropdownNavbar />
       <div className="wrapper">
         <div
           className="page-header"

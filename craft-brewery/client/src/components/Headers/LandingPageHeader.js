@@ -1,7 +1,18 @@
 import React from "react";
 
 // reactstrap components
-import { Container } from "reactstrap";
+import { 
+  Container,
+  FormGroup,
+  Input,
+  Col,
+  Button,
+  Card,
+  CardBody,
+  Row, 
+  Form
+
+ } from "reactstrap";
 
 // core components
 
@@ -29,20 +40,71 @@ function LandingPageHeader() {
         ref={pageHeader}
         style={{
           backgroundImage:
-            "url(" + require("assets/img/landing_header.jpeg") + ")"
+            "url(" + require("assets/img/DFW.jpg") + ")"
         }}
       >
         <div className="filter" />
         <div className="content-center">
-          <Container>
-            <div className="motto">
-              <h1 className="title">Craft Brewery</h1>
-              <h3 className="description">
-                What is your Craft?
-              </h3>
-              <br />
+        <div className="header-2">
+
+          <div
+            className="page-header"
+            style={{
+              backgroundImage:
+                "url(" + require("assets/img/DFW.jpg") + ")"
+            }}
+          >
+            <div className="filter" />
+            <div className="content-center">
+              <Container>
+                <Row>
+                  <Col className="ml-auto mr-auto text-center" md="8">
+                    <h1 className="title">Tap It DFW</h1>
+                    <h5 className="description">
+                      Now is the time to get social.  Find your new favorite DFW Brewery and keep up to date with the latest events.
+                      
+                    </h5>
+                    <br />
+                  </Col>
+                  <Col className="ml-auto mr-auto" md="10">
+                    <Card className="card-raised card-form-horizontal no-transition">
+                      <CardBody>
+                        <Form action="" method="">
+                          <Row>
+                            <Col md="4">
+                              <FormGroup>
+                                <Input
+                                  defaultValue=""
+                                  placeholder="City"
+                                  type="text"
+                                />
+                              </FormGroup>
+                            </Col>
+                            <Col md="4">
+                              <FormGroup>
+                                <Input
+                                  defaultValue=""
+                                  placeholder="State"
+                                  type="text"
+                                />
+                              </FormGroup>
+                            </Col>
+
+                            <Col md="3">
+                              <Button block color="danger" type="button">
+                                <i className="nc-icon nc-zoom-split" /> Search
+                              </Button>
+                            </Col>
+                          </Row>
+                        </Form>
+                      </CardBody>
+                    </Card>
+                  </Col>
+                </Row>
+              </Container>
             </div>
-          </Container>
+          </div>
+        </div>
         </div>
       </div>
     </>

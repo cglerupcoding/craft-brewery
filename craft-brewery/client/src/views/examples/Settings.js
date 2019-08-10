@@ -13,7 +13,7 @@ import {
 } from "reactstrap";
 
 // core components
-import ColorNavbar from "components/Navbars/ColorNavbar.js";
+import MultiDropdownNavbar from "components/Navbars/MultiDropdownNavbar.js";
 import SettingsHeader from "components/Headers/SettingsHeader.js";
 import FooterWhite from "components/Footers/FooterWhite.js";
 
@@ -29,7 +29,7 @@ function Settings() {
   });
   return (
     <>
-      <ColorNavbar />
+      <MultiDropdownNavbar />
       <div className="wrapper">
         <SettingsHeader />
         <div className="profile-content section">

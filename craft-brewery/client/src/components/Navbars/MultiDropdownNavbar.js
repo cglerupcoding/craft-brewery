@@ -94,10 +94,10 @@ function MultiDropdownNavbar() {
                 <NavLink href="/settings/">Settings</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/settings/">login</NavLink>
+                <NavLink href="/login-page/">login</NavLink>
               </NavItem>
               <NavItem>
-                <NavLink href="/settings/">Create a Profile</NavLink>
+                <NavLink href="/register-page/">Create a Profile</NavLink>
               </NavItem>
             </Nav>
           </Collapse>
