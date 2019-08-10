@@ -196,7 +196,7 @@ function LandingPage() {
           <Container>
             <h2 className="title">Our Favorite Local Breweries</h2>
             <Row>
-              <Col md="4">
+              <Col md="3">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
                     <a href="https://www.deepellumbrewing.com/" target="_blank">
@@ -209,7 +209,7 @@ function LandingPage() {
                   <CardBody>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
-                        <CardTitle tag="h4">Deep Ellum Brewing Company</CardTitle>
+                        <CardTitle tag="h5">Deep Ellum Brewing Co.</CardTitle>
                         <h6 className="card-category text-muted">
                           Dallas, TX
                         </h6>
@@ -220,7 +220,7 @@ function LandingPage() {
                     </p>
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button
+                    {/* <Button
                       className="btn-link btn-just-icon mr-1"
                       color="twitter"
                       href="#pablo"
@@ -243,11 +243,11 @@ function LandingPage() {
                       onClick={e => e.preventDefault()}
                     >
                       <i className="fa fa-linkedin" />
-                    </Button>
+                    </Button> */}
                   </CardFooter>
                 </Card>
               </Col>
-              <Col md="4">
+              <Col md="3">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
                     <a href="https://rahrbrewing.com/" target="_blank">
@@ -260,8 +260,7 @@ function LandingPage() {
                   <CardBody>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
-                        <CardTitle tag="h4">Rahr & Sons Brewery</CardTitle>
-                        <br />
+                        <CardTitle tag="h5">Rahr & Sons Brewery</CardTitle>
                         <h6 className="card-category text-muted">Fort Worth, TX</h6>
                       </div>
                     </a>
@@ -272,7 +271,7 @@ function LandingPage() {
                     <br />
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button
+                    {/* <Button
                       className="btn-link btn-just-icon mr-1"
                       color="twitter"
                       href="#pablo"
@@ -295,11 +294,11 @@ function LandingPage() {
                       onClick={e => e.preventDefault()}
                     >
                       <i className="fa fa-linkedin" />
-                    </Button>
+                    </Button> */}
                   </CardFooter>
                 </Card>
               </Col>
-              <Col md="4">
+              <Col md="3">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
                     <a href="https://www.communitybeer.com/" target="_blank">
@@ -312,7 +311,7 @@ function LandingPage() {
                   <CardBody>
                     <a href="#pablo" onClick={e => e.preventDefault()}>
                       <div className="author">
-                        <CardTitle tag="h4">Community Beer Co.</CardTitle>
+                        <CardTitle tag="h5">Community Beer Co.</CardTitle>
                         <h6 className="card-category text-muted">Dallas, TX</h6>
                       </div>
                     </a>
@@ -326,7 +325,7 @@ function LandingPage() {
                     <br />
                   </CardBody>
                   <CardFooter className="text-center">
-                    <Button
+                    {/* <Button
                       className="btn-link btn-just-icon mr-1"
                       color="twitter"
                       href="#pablo"
@@ -349,7 +348,61 @@ function LandingPage() {
                       onClick={e => e.preventDefault()}
                     >
                       <i className="fa fa-linkedin" />
-                    </Button>
+                    </Button> */}
+                  </CardFooter>
+                </Card>
+              </Col>
+              <Col md="3">
+                <Card className="card-profile card-plain">
+                  <div className="card-avatar">
+                    <a href="http://pantherislandbrewing.com/" target="_blank">
+                      <img
+                        alt="..."
+                        src={require("assets/img/panther.jpeg")}
+                      />
+                    </a>
+                  </div>
+                  <CardBody>
+                    <a href="http://pantherislandbrewing.com/" target="_blank">
+                      <div className="author">
+                        <CardTitle tag="h5">Panther Island Brewing</CardTitle>
+                        <h6 className="card-category text-muted">Fort Worth, TX</h6>
+                      </div>
+                    </a>
+                    <p className="card-description text-center">
+                    Panther Island Brewing is a family owned and operated micro-brewery located on the banks of the Trinity River in Fort Worth, TX. 
+                    </p>
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
+                  </CardBody>
+                  <CardFooter className="text-center">
+                    {/* <Button
+                      className="btn-link btn-just-icon mr-1"
+                      color="twitter"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      <i className="fa fa-twitter" />
+                    </Button> */}
+                    {/* <Button
+                      className="btn-link btn-just-icon mr-1"
+                      color="dribbble"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      <i className="fa fa-dribbble" />
+                    </Button> */}
+                    {/* <Button
+                      className="btn-link btn-just-icon"
+                      color="linkedin"
+                      href="#pablo"
+                      onClick={e => e.preventDefault()}
+                    >
+                      <i className="fa fa-linkedin" />
+                    </Button> */}
                   </CardFooter>
                 </Card>
               </Col>

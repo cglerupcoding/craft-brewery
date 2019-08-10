@@ -51,7 +51,7 @@ function LandingPageHeader() {
             className="page-header"
             style={{
               backgroundImage:
-                "url(" + require("assets/img/DFW.jpg") + ")"
+                "url(" + require("assets/img/tap-wall.jpg") + ")"
             }}
           >
             <div className="filter" />
@@ -65,8 +65,13 @@ function LandingPageHeader() {
                       
                     </h5>
                     <br />
+                    <br />
+                    <br />
+                    <br />
+                    <br />
                   </Col>
                   <Col className="ml-auto mr-auto" md="10">
+                    <h4 id="search-head"><strong>Find a brewery near you.</strong></h4>
                     <Card className="card-raised card-form-horizontal no-transition">
                       <CardBody>
                         <Form action="" method="">
