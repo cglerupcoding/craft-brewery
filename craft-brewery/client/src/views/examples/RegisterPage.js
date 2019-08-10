@@ -67,15 +67,15 @@ function RegisterPage() {
                   </div>
                 </div>
                 <div className="info info-horizontal">
-                  <div className="icon">
+                  {/* <div className="icon">
                     <i className="fa fa-user-secret" />
-                  </div>
-                  <div className="description">
+                  </div> */}
+                  {/* <div className="description">
                     <h3>We value your privacy</h3>
                     <p>
                       Using Complex State of the Art technology, we value your privacy and your data is encrypted and never sold.
                     </p>
-                  </div>
+                  </div> */}
                 </div>
               </Col>
               <Col className="mr-auto" lg="6" md="6" sm="5" xs="12">
@@ -89,10 +89,12 @@ function RegisterPage() {
                     <div className="line r" />
                   </div>
                   <Form className="register-form">
+                    <Input placeholder="Name" type="text" name="name" />
                     <Input placeholder="Email" type="text" name="email" />
                     <Input placeholder="Birthday" type="date" name="birthday"/>
                     <Input placeholder="City" type="text" name="city" />
                     <Input placeholder="State" type="text" name="state"/>
+                    <Input placeholder="Favorite Beers" type="text" name="favorite beers"/>
                
                     <Input placeholder="Password" type="password" />
                     <Input placeholder="Confirm Password" type="password" />
