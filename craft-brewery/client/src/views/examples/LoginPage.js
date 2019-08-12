@@ -58,19 +58,10 @@ function LoginPage() {
                       type="password"
                     />
                     <Button block className="btn-round" color="danger">
-                      Register
+                      Login
                     </Button>
                   </Form>
-                  <div className="forgot">
-                    <Button
-                      className="btn-link"
-                      color="danger"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      Forgot password?
-                    </Button>
-                  </div>
+
                 </Card>
               </Col>
             </Row>

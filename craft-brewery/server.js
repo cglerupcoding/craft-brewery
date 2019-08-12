@@ -67,6 +67,11 @@ app.use(eventRouter);
 // Define any API routes before this runs
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+  app.post('/signup', Authentication.signup)
+app.post('/signin', Authentication.signin)
+});
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
 
