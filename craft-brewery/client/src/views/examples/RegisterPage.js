@@ -12,7 +12,7 @@ import {
   NavItem,
   NavLink,
   Col
-} from "reactstrap";
+} from 'reactstrap';
 
 // core components
 import MultiDropdownNavbar from "components/Navbars/MultiDropdownNavbar.js";
@@ -21,9 +21,16 @@ export default class RegisterPage extends React.Component  {
   constructor(props) {
     super(props);
     this.state = {
-      name:'',
+      first_name:'',
+      last_name:'',
+      favorite_beers:'',
+      birthdate:'',
+      city:'',
+      state:'',
       email:'',
-      beer:''
+      confirm:''
+
+
     }
   }
   handleRegister = (event) => {
@@ -110,16 +117,17 @@ export default class RegisterPage extends React.Component  {
                     <div className="line r" />
                   </div>
                   <Form className="register-form" method="POST">
-                    <Input onChange={this.handleChange} placeholder="Name" type="text" name="name" />
+                    <Input onChange={this.handleChange} placeholder="Name" type="text" name="first_name" />
+                    <Input onChange={this.handleChange} placeholder="Name" type="text" name="last_name" />
                     <Input onChange={this.handleChange} placeholder="Email" type="text" name="email" />
-                    <Input onChange={this.handleChange} placeholder="Birthday" type="date" name="birthday"/>
+                    <Input onChange={this.handleChange} placeholder="Birthday" type="date" name="birthdate"/>
                     <Input onChange={this.handleChange} placeholder="City" type="text" name="city" />
                     <Input onChange={this.handleChange} placeholder="State" type="text" name="state"/>
-                    <Input onChange={this.handleChange} placeholder="Favorite Beers" type="text" name="favorite beers"/>
+                    <Input onChange={this.handleChange} placeholder="Favorite Beers" type="text" name="favorite_beers"/>
                
-                    <Input onChange={this.handleChange} placeholder="Password" type="password" />
-                    <Input onChange={this.handleChange} placeholder="Confirm Password" type="password" />
-                    <Button onClick={this.handleRegister} block className="btn-round" color="default"  href="/landing-page/">
+                    <Input onChange={this.handleChange} placeholder="Password" type="password" name='password' />
+                    <Input onChange={this.handleChange} placeholder="Confirm Password" type="comfirm" name='confirm' />
+                    <Button onClick={this.handleRegister} block className="btn-round" color="default" href="/login-page/">
                       Submit
                     </Button>
                   </Form>

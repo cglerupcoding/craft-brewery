@@ -1,5 +1,5 @@
 import token from '../util/token';
-import Profile from '../model/profileSchemaModel';
+import UserModel from '../user/model';
 
 export default {
     signup : (req, res, next) => {
@@ -10,7 +10,7 @@ export default {
                 .status(422)
                 .send({error: 'You must provide email and password.'});
         }
-        ProfileSchema
+        UserModel
             .findOne({
                 email: email
             }, function (err, existingUser) {
