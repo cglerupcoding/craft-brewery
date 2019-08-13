@@ -59,7 +59,7 @@ function LandingPageHeader() {
               <Container>
                 <Row>
                   <Col className="ml-auto mr-auto text-center" md="8">
-                    <h1 className="title">Tap It DFW</h1>
+                    <h1 className="title"><strong>Tap It DFW</strong></h1>
                     <h5 className="description">
                       Now is the time to get social.  Find your new favorite DFW Brewery and keep up to date with the latest events.
                       

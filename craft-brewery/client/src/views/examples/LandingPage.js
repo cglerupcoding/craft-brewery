@@ -39,12 +39,12 @@ function LandingPage() {
           <Container>
             <Row>
               <Col className="ml-auto mr-auto" md="8">
-                <h2 className="title">My Events</h2>
-        section
+                <h2 className="title">Local Brewery Events</h2>
+        {/* section */}
         <div className="section section-blog">
           <Container>
-            <Row>
-              <Col md="4">
+            {/* <Row> */}
+              {/* <Col md="4">
                 <Card className="card-blog">
                   <div className="card-image">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -84,9 +84,9 @@ function LandingPage() {
                       </div>
                     </CardFooter>
                   </CardBody>
-                </Card>
-              </Col>
-              <Col md="4">
+                </Card> */}
+              {/* </Col>  */}
+              {/* <Col md="4">
                 <Card className="card-blog">
                   <div className="card-image">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -127,8 +127,8 @@ function LandingPage() {
                     </CardFooter>
                   </CardBody>
                 </Card>
-              </Col>
-              <Col md="4">
+              // </Col> */}
+              {/* <Col md="4">
                 <Card className="card-blog">
                   <div className="card-image">
                     <a href="#pablo" onClick={e => e.preventDefault()}>
@@ -172,10 +172,10 @@ function LandingPage() {
                     </CardFooter>
                   </CardBody>
                 </Card>
-              </Col>
-            </Row>
+              </Col> */}
+            {/* </Row> */}
           </Container>
-        </div>
+        </div> 
         {/* section */}
 
                 <br />
@@ -187,14 +187,14 @@ function LandingPage() {
                 >
                   See Details
                 </Button>
-              </Col>
+              </Col> */}
             </Row>
             <br />
             <br />
             <Row>
-            </Row>
+            </Row> 
           </Container>
-        </div>
+        </div> 
         <div className="section section-dark text-center landing-section">
           <Container>
             <h2 className="title">Our Favorite Local Breweries</h2>
@@ -210,7 +210,7 @@ function LandingPage() {
                     </a>
                   </div>
                   <CardBody>
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="https://www.deepellumbrewing.com/" onClick={e => e.preventDefault()}>
                       <div className="author">
                         <CardTitle tag="h5">Deep Ellum Brewing Co.</CardTitle>
                         <h6 className="card-category text-muted">
@@ -261,7 +261,7 @@ function LandingPage() {
                     </a>
                   </div>
                   <CardBody>
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
+                    <a href="https://rahrbrewing.com/" onClick={e => e.preventDefault()}>
                       <div className="author">
                         <CardTitle tag="h5">Rahr & Sons Brewery</CardTitle>
                         <h6 className="card-category text-muted">Fort Worth, TX</h6>
@@ -273,8 +273,8 @@ function LandingPage() {
                     <br />
                     <br />
                   </CardBody>
-                  <CardFooter className="text-center">
-                    {/* <Button
+                  {/* <CardFooter className="text-center">
+                    <Button
                       className="btn-link btn-just-icon mr-1"
                       color="twitter"
                       href="#pablo"
@@ -297,8 +297,8 @@ function LandingPage() {
                       onClick={e => e.preventDefault()}
                     >
                       <i className="fa fa-linkedin" />
-                    </Button> */}
-                  </CardFooter>
+                    </Button>
+                  </CardFooter> */}
                 </Card>
               </Col>
               <Col md="3">
@@ -327,14 +327,14 @@ function LandingPage() {
                     <br />
                     <br />
                   </CardBody>
-                  <CardFooter className="text-center">
-                    {/* <Button
+                  {/* <CardFooter className="text-center"> */}
+                     {/* <Button
                       className="btn-link btn-just-icon mr-1"
                       color="twitter"
                       href="#pablo"
                       onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-twitter" />
+                    > */}
+                      {/* <i className="fa fa-twitter" />
                     </Button>
                     <Button
                       className="btn-link btn-just-icon mr-1"
@@ -351,8 +351,8 @@ function LandingPage() {
                       onClick={e => e.preventDefault()}
                     >
                       <i className="fa fa-linkedin" />
-                    </Button> */}
-                  </CardFooter>
+                    </Button> 
+                  </CardFooter> */}
                 </Card>
               </Col>
               <Col md="3">
