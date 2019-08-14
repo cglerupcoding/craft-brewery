@@ -25,20 +25,18 @@ export default class LandingPageForm extends React.Component {
     };
   }
 
-  handleRegister = event => {
+  handleEvents = event => {
     event.preventDefault();
-    axios.get("/searchBrewery/:city/:state", this.state).then(res => {
+    axios.get('/searchBrewery/:city/:state', this.state).then(res => {
       console.log(res);
     });
   };
-  handleChange = event => {
-    const { name, value } = event.target || event.srcElement;
-    this.setState({
-      [name]: value
-    });
-  };
-
-
+  // handleChange = (event) => {
+  //   const { name, value } = event.target || event.srcElement;
+  //   this.setState({
+  //     [name]: value
+  //   });
+  // }  
 
 
     render(){
@@ -90,7 +88,7 @@ export default class LandingPageForm extends React.Component {
                                   <Col md="4">
                                     <FormGroup>
                                       <Input
-                                        onChange={this.handleChange}
+                                        onChange={this.handleCall}
                                         placeholder="city"
                                         type="text"
                                         name="city"
@@ -100,7 +98,7 @@ export default class LandingPageForm extends React.Component {
                                   <Col md="4">
                                     <FormGroup>
                                       <Input
-                                        onChange={this.handleChange}
+                                        onChange={this.handleCall}
                                         placeholder="state"
                                         type="text"
                                         name="state"
@@ -109,7 +107,7 @@ export default class LandingPageForm extends React.Component {
                                   </Col>
 
                                   <Col md="3">
-                                  <Button onClick={this.handleRegister} block className="btn-round" color="default" href="/login-page/">
+                                  <Button onClick={this.handleRegister} block className="btn-round" color="default" method = 'GET'>
                                       <i className="nc-icon nc-zoom-split" /> Search
                                 </Button>
                                   </Col>
@@ -127,5 +125,5 @@ export default class LandingPageForm extends React.Component {
           </div>
         </>
       );
-    }
-  }
+    };
+};

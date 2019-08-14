@@ -22,15 +22,18 @@ export default class RegisterPage extends React.Component  {
     this.state = {
 
       email:'',
-      confirm:''
+      password:''
 
 
     }
   }
-  handleRegister = (event) => {
+  handle = (event) => {
     // event.preventDefault();
-    axios.get('/profiles',this.state).then(res => {
-      console.log(res);
+    axios.get('/profiles/:id',this.state).then(res => {
+      window.location = '/landing-page'
+    })
+    .catch (err => {
+      console.log(err);
     })
   }
   handleChange = (event) => {
@@ -70,7 +73,7 @@ export default class RegisterPage extends React.Component  {
                   <Form className="register-form" method="GET" action="landing-page">
                   <Input onChange={this.handleChange} placeholder="Email" type="text" name="email" />
                   <Input onChange={this.handleChange} placeholder="Password" type="password" name='password' />
-                  <Button onClick={this.handleRegister} block className="btn-round" color="default">
+                  <Button onClick={this.handleLogin} block className="btn-round" color="default">
                       Login
                     </Button>
                   </Form>

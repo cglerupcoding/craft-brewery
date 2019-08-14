@@ -36,7 +36,10 @@ export default class RegisterPage extends React.Component  {
   handleRegister = (event) => {
     event.preventDefault();
     axios.post('/profiles',this.state).then(res => {
-      console.log(res);
+      window.location = '/landing-page'
+    })
+    .catch (err => {
+      console.log(err);
     })
   }
   handleChange = (event) => {
@@ -127,7 +130,7 @@ export default class RegisterPage extends React.Component  {
                
                     <Input onChange={this.handleChange} placeholder="Password" type="password" name='password' />
                     <Input onChange={this.handleChange} placeholder="Confirm Password" type="comfirm" name='confirm' />
-                    <Button onClick={this.handleRegister} block className="btn-round" color="default" href="/login-page/">
+                    <Button onClick={this.handleRegister} block className="btn-round" color="default">
                       Submit
                     </Button>
                   </Form>
