@@ -11,8 +11,6 @@ const router = express.Router();
 const profileRouter = require('./controllers/profiles');
 const eventRouter = require('./controllers/events');
 const morgan = require ('morgan');
-const http = require ('http');
-const Authentication = require("./controllers/authentication.js");
 
 
 //Require our routes file pass through our router
@@ -72,8 +70,8 @@ app.get("*", (req, res) => {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-app.post('/signin', Authentication.signin)
-app.post('/signup', Authentication.signup)
+// app.post('/signin', Authentication.signin)
+// app.post('/signup', Authentication.signup)
 
 
 

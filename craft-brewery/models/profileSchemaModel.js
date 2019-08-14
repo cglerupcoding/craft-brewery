@@ -1,6 +1,6 @@
 //To require our needed dependency
 const mongoose = require('mongoose');
-const bcrypt = require('bcrypt')
+// const bcrypt = require('bcrypt')
 //To save a reference to the Schema constructor
 const Schema = mongoose.Schema;
 
@@ -75,12 +75,12 @@ const ProfileSchema = new Schema({
 //     });
 // });
 
-ProfileSchema.methods.comparePassword = function(candidatePassword, callback) {
-    bcrypt.compare(candidatePassword, this.password, function(err, isMatch){
-        if (err) { return callback(err); }
-        callback(null, isMatch);
-    });
-}
+// ProfileSchema.methods.comparePassword = function(candidatePassword, callback) {
+//     bcrypt.compare(candidatePassword, this.password, function(err, isMatch){
+//         if (err) { return callback(err); }
+//         callback(null, isMatch);
+//     });
+// }
 
 // This creates our model from the above schema, using mongoose's model method
 const Profile = mongoose.model("Profile", ProfileSchema);
