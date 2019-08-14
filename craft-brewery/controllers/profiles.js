@@ -34,8 +34,13 @@ router.put('/profiles/:id', function(req, res){
 router.post('/profiles', function(req, res){
     console.log('HIT PROFILES ROUTE');
     const email = req.body.email;
-    const password = req.body.password;
-
+	const password = req.body.password;
+	const city = req.body.city;
+	const state = req.body.state;
+	const favorite_beers = req.body.favorite_beers;
+	const first_name = req.body.first_name;
+	const last_name = req.body.last_name;
+	const birthdate = req.body.birthdate;
     console.log('SIGNUP');
 
     if (!email || !password) {
@@ -64,7 +69,13 @@ router.post('/profiles', function(req, res){
         // If not a duplicate, create and save user record
         const profile = new Profile({
             email: email,
-            password: password
+			password: password,
+			state: state,
+			favorite_beers: favorite_beers,
+			birthdate: birthdate,
+			city: city,
+			first_name: first_name,
+			last_name: last_name
         });
 
         console.log('SAVING PROFILE');
