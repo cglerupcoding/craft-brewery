@@ -8,25 +8,25 @@ const Schema = mongoose.Schema;
 //To define the db collection and schema for user Profiles
 //Use the Schema constructor to create a new ProfileSchema object
 const EventSchema = new Schema({
-    // name: {
-    //     type: String,
-    //     trim: true,
-    //     required: "Event name is required"
-    // },
-    // date: {
-    //     type: Date,
-    //     trim: true,
-    //     required: "Event date is required"
-    // },
-    // event_type: {
-    //     type: String,
-    //     trim: true
-    // },
-    // location: {
-    //     type: String,
-    //     trim: true,
-    //     required: "Event location is required"
-    // },
+    name: {
+        type: String,
+        trim: true,
+        required: "Event name is required"
+    },
+    date: {
+        type: Date,
+        trim: true,
+        required: "Event date is required"
+    },
+    event_type: {
+        type: String,
+        trim: true
+    },
+    location: {
+        type: String,
+        trim: true,
+        required: "Event location is required"
+    },
     event_time: {
         type: String,
         trim: true
