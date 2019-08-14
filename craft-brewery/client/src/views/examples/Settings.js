@@ -16,148 +16,182 @@ import {
 import MultiDropdownNavbar from "components/Navbars/MultiDropdownNavbar.js";
 import SettingsHeader from "components/Headers/SettingsHeader.js";
 import FooterWhite from "components/Footers/FooterWhite.js";
-
-function Settings() {
-  document.documentElement.classList.remove("nav-open");
-  React.useEffect(() => {
-    document.body.classList.add("settings-page");
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-    return function cleanup() {
-      document.body.classList.remove("settings-page");
+import axios from "axios";
+export default class Settings extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "name",
+      date: "date",
+      event_type: "event_type",
+      location: "location",
+      event_time: "event_time",
+      event_cost: "eventcost",
+      event_description: "event_description"
     };
-  });
-  return (
+  }
+
+  handleRegister = event => {
+    event.preventDefault();
+    axios.post("/beer_events", this.state).then(res => {
+      console.log(res);
+    });
+  };
+  handleChange = event => {
+    const { name, value } = event.target || event.srcElement;
+    this.setState({
+      [name]: value
+    });
+  };
+
+
+
+
+  render() {
+    return (
     <>
-      <MultiDropdownNavbar />
-      <div className="wrapper">
-        <SettingsHeader />
-        <div className="profile-content section">
-          <Container>
-            <Row>
-              <div className="profile-picture">
-                <div
-                  className="fileinput fileinput-new"
-                  data-provides="fileinput"
-                >
-                  <div className="fileinput-new img-no-padding">
-                    <img
-                      alt="..."
-                      src={require("assets/img/bitter.jfif")}
-                    />
-                  </div>
-                  <div className="fileinput-preview fileinput-exists img-no-padding" />
-                  <div>
-                    <Button
-                      className="btn-file btn-round"
-                      color="default"
-                      outline
-                    >
-                      <span className="fileinput-new">Change Photo</span>
-                      <span className="fileinput-exists">Change</span>
-                      <input name="..." type="file" />
+        <MultiDropdownNavbar />
+        <div className="wrapper">
+          <SettingsHeader />
+          <div className="profile-content section">
+            <Container>
+              <Row>
+                <div className="profile-picture">
+                  <div
+                    className="fileinput fileinput-new"
+                    data-provides="fileinput"
+                  >
+                    <div className="fileinput-new img-no-padding">
+                      <img
+                        alt="..."
+                        src={require("assets/img/bitter.jfif")}
+                      />
+                    </div>
+                    <div className="fileinput-preview fileinput-exists img-no-padding" />
+                    <div>
+                      <Button
+                        className="btn-file btn-round"
+                        color="default"
+                        outline
+                      >
+                        <span className="fileinput-new">Change Photo</span>
+                        <span className="fileinput-exists">Change</span>
+                        <input name="..." type="file" />
+                      </Button>
+                      <br />
+                      <Button
+                        className="btn-link fileinput-exists"
+                        color="danger"
+                        data-dismiss="fileinput"
+                        href="#pablo"
+                        onClick={e => e.preventDefault()}
+                      >
+                        <i className="fa fa-times" />
+                        Remove
                     </Button>
-                    <br />
-                    <Button
-                      className="btn-link fileinput-exists"
-                      color="danger"
-                      data-dismiss="fileinput"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-times" />
-                      Remove
-                    </Button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </Row>
-            <Row>
-              <Col className="ml-auto mr-auto" md="6">
-                <Form className="settings-form">
-                  <Row>
-                    <Col md="6" sm="6">
-                      <FormGroup>
-                        <label>First Name</label>
-                        <Input
-                          className="border-input"
-                          placeholder="First Name"
-                          type="text"
-                        />
+              </Row>
+              <Row>
+                <Col className="ml-auto mr-auto" md="6">
+                <Form action="" method="POST">
+                    <Row>
+                      <Col md="6" sm="6">
+                        <FormGroup>
+                          <label>Event Name</label>
+                          <Input
+                            onChange={this.handleChange}
+                            placeholder="name"
+                            type="text"
+                            name="name"
+                          />
+                        </FormGroup>
+                      </Col>
+                      <Col md="6" sm="6">
+                        <FormGroup>
+                          <label>Event Date</label>
+                          <Input
+                            onChange={this.handleChange}
+                            placeholder="date"
+                            type="date"
+                            name="date"
+                          />
+                        </FormGroup>
+                      </Col>
+                    </Row>
+                    <FormGroup>
+                      <label>Event Type</label>
+                      <Input
+                        onChange={this.handleChange}
+                        placeholder="event type"
+                        type="text"
+                        name="event_type"
+                      />
+                    </FormGroup>
+                    <FormGroup>
+                      <label>Location</label>
+                      <Input
+                        onChange={this.handleChange}
+                        placeholder="location"
+                        type="text"
+                        name="location"
+                      />
                       </FormGroup>
-                    </Col>
-                    <Col md="6" sm="6">
                       <FormGroup>
-                        <label>Last Email</label>
+                        <label>Event Time</label>
                         <Input
-                          className="border-input"
-                          placeholder="Last Name"
+                          onChange={this.handleChange}
+                          placeholder="event_time"
                           type="text"
+                          name="event_time"
                         />
-                      </FormGroup>
-                    </Col>
-                  </Row>
-                  <FormGroup>
-                    <label>Job Title</label>
-                    <Input
-                      className="border-input"
-                      placeholder="Job Title"
-                      type="text"
-                    />
-                  </FormGroup>
-                  <FormGroup>
-                    <label>Description</label>
-                    <Input
-                      placeholder="This is a textarea limited to 150 characters."
-                      className="textarea-limited"
-                      type="textarea"
-                      maxLength="150"
-                      rows="3"
-                    />
-                    <h5>
-                      <small>
-                        <span
-                          className="pull-right"
-                          id="textarea-limited-message"
-                        >
-                          150 characters left
+                        </FormGroup>
+                        <FormGroup>
+                          <label>Event Cost</label>
+                          <Input
+                            onChange={this.handleChange}
+                            placeholder="event_cost"
+                            type="text"
+                            name="event_cost"
+                          />
+                          </FormGroup>
+                          <FormGroup>
+                            <label>Description</label>
+                            <Input
+                              onChange={this.handleChange}
+                              placeholder="event_description"
+                              type="text"
+                              name="event_descrition"
+                            />
+                            <h5>
+                              <small>
+                                <span
+                                  className="pull-right"
+                                  id="textarea-limited-message"
+                                >
+                                  150 characters left
                         </span>
-                      </small>
-                    </h5>
-                  </FormGroup>
-                  <label>Notifications</label>
-                  <ul className="notifications">
-                    <li className="notification-item">
-                      Updates regarding platform changes{" "}
-                      <Switch onColor="info" offColor="info" />
-                    </li>
-                    <li className="notification-item">
-                      Updates regarding product changes{" "}
-                      <Switch onColor="info" offColor="info" />
-                    </li>
-                    <li className="notification-item">
-                      Weekly newsletter{" "}
-                      <Switch onColor="info" offColor="info" />
-                    </li>
-                  </ul>
-                  <div className="text-center">
-                    <Button
-                      className="btn-wd btn-round"
-                      color="info"
-                      type="submit"
-                    >
-                      Save
+                              </small>
+                            </h5>
+                          </FormGroup>
+
+                          <div className="text-center">
+                          <Button onClick={this.handleRegister} block className="btn-round" color="default" href="/login-page/">
+
+                              Save
                     </Button>
-                  </div>
+                          </div>
                 </Form>
               </Col>
             </Row>
           </Container>
         </div>
       </div>
-      <FooterWhite />
+              <FooterWhite />
     </>
-  );
-}
-
-export default Settings;
+            );
+          }
+        }
+          
+          
