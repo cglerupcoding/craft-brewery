@@ -15,7 +15,6 @@ import {
 } from 'reactstrap';
 
 // core components
-import MultiDropdownNavbar from "components/Navbars/MultiDropdownNavbar.js";
 import axios from 'axios';
 export default class RegisterPage extends React.Component  {
   constructor(props) {
@@ -29,8 +28,6 @@ export default class RegisterPage extends React.Component  {
       state:'',
       email:'',
       confirm:''
-
-
     }
   }
   handleRegister = (event) => {
@@ -39,7 +36,7 @@ export default class RegisterPage extends React.Component  {
       window.location = '/landing-page'
     })
     .catch (err => {
-      console.log(err);
+      alert("email is in use");
     })
   }
   handleChange = (event) => {
@@ -62,7 +59,6 @@ export default class RegisterPage extends React.Component  {
  render(){
   return (
     <>
-      <MultiDropdownNavbar />
       <div className="wrapper">
         <div
           className="page-header"
@@ -129,7 +125,7 @@ export default class RegisterPage extends React.Component  {
                     <Input onChange={this.handleChange} placeholder="Favorite Beers" type="text" name="favorite_beers"/>
                
                     <Input onChange={this.handleChange} placeholder="Password" type="password" name='password' />
-                    <Input onChange={this.handleChange} placeholder="Confirm Password" type="comfirm" name='confirm' />
+                    <Input onChange={this.handleChange} placeholder="Confirm Password" type="passord" name='confirm' />
                     <Button onClick={this.handleRegister} block className="btn-round" color="default">
                       Submit
                     </Button>

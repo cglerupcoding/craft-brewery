@@ -15,35 +15,38 @@ import {
 // core components
 
 import axios from "axios";
-export default class LandingPageForm extends React.Component {
+export default class LandingPageHeader extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      city: "city",
-      state: "state"
+      city: "",
+      state: "",
     };
   }
 
-  handleApi = event => {
+  handleApi = (event) => {
     event.preventDefault();
-    axios.get('https://api.brewerydb.com/v2/locations?key=92d341b4fae6f216a0f4c979d51501cd', {
-      params: {
-        locality: "",
-        region: ""
-      }
+    axios.get('https://api.brewerydb.com/v2/locations?key=92d341b4fae6f216a0f4c979d51501cd&locality=arlington&region=texas',this.state).then(res => {
+      console.log(res);
     })
-    .then(function (response) {
-      console.log(response);
-      // resultElement.innerHTML = generateSuccessHTMLOutput(response);
-    })
-    };
+  }
   handleChange = (event) => {
     const { name, value } = event.target || event.srcElement;
     this.setState({
       [name]: value
     });
   }  
-
+  componentDidMount() {
+    document.documentElement.classList.remove("nav-open");
+    document.body.classList.add("register-page");
+    document.body.classList.add("full-screen");
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0;
+    return function cleanup() {
+      document.body.classList.remove("register-page");
+      document.body.classList.remove("full-screen");
+    };
+  }
 
     render(){
       return (
@@ -80,8 +83,7 @@ export default class LandingPageForm extends React.Component {
                           <br />
                           <br />
                           <br />
-                          <br />
-                          <br />
+                         
                         </Col>
                         <Col className="ml-auto mr-auto" md="6">
                           <h4 id="search-head">
@@ -104,7 +106,7 @@ export default class LandingPageForm extends React.Component {
 
                                   <Col md="3">
                                   <Button onClick={this.handleApi} block className="btn-round" color="default">
-                                    Login
+                                    Submit
                                   </Button>
 
                                   </Col>

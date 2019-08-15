@@ -2,8 +2,7 @@
 const Profile = require("../models/profileSchemaModel");
 const express = require("express");
 const router = express.Router();
-const jwt = require("jwt-simple");
-const config = require("../config");
+
 
 router.get('/profiles/:id', function(req, res){
     Profile.findOne({ _id: req.params.id })
@@ -17,12 +16,7 @@ router.get('/profiles/:id', function(req, res){
 });
 })
 
-// payload
-function tokenForProfile(profile) {
-  console.log("CREATING JWT");
-  const timestamp = new Date().getTime();
-  return jwt.encode({ sub: profile.id, iat: timestamp }, config.secret);
-}
+
 
 router.put('/profiles/:id', function(req, res){
     Profile.findOneAndUpdate({ _id: req.params.id }, { $set: req.body }, { new: true }).then(function(dbProfile) {
@@ -91,22 +85,22 @@ router.post('/profiles', function(req, res){
             res.json({ token: tokenForProfile(profile) });
         });
     });
-    // Profile.create(req.body)
-    // .then(function(dbProfile) {
-    //   // If saved successfully, send the the new User document to the client
-    //   res.json(dbProfile);
-    // })
-    // .catch(function(err) {
-    //   // If an error occurs, send the error to the client
-    //   res.json(err);
-    // });
+    Profile.create(req.body)
+    .then(function(dbProfile) {
+      // If saved successfully, send the the new User document to the client
+      res.json(dbProfile);
+    })
+    .catch(function(err) {
+      // If an error occurs, send the error to the client
+      res.json(err);
+    });
 })
 
-// router.delete('/profiles/:id', function(req, res){
-//     Profile.remove({ _id: req.params.id }).then(function(dbProfile) {
-//         res.json(dbProfile);
-//   });
-// })
+router.delete('/profiles/:id', function(req, res){
+    Profile.remove({ _id: req.params.id }).then(function(dbProfile) {
+        res.json(dbProfile);
+  });
+})
 
 // GET /logout
 router.get('/logout', function(req, res, next) {
@@ -124,26 +118,5 @@ router.get('/logout', function(req, res, next) {
 
 
 module.exports = router;
-
-
-
-
-// module.exports = {
-    
-//     get: function(query, cb) {
-//         Profile.find(query)
-//         .sort({
-//             _id: -1
-//         })
-//         .exec(function(err, doc){
-//             cb(doc);
-//         });
-//     },
-//     delete: function(query, cb) {
-//         Profile.remove(query, cb);
-//     },
-
-
-
 
 

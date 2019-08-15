@@ -10,7 +10,9 @@ const dotenv = require('dotenv').config();
 const router = express.Router();
 const profileRouter = require('./controllers/profiles');
 const eventRouter = require('./controllers/events');
+const breweryRouter = require('./controllers/brewery');
 const morgan = require ('morgan');
+const http = require ('http');
 
 
 //Require our routes file pass through our router
@@ -62,7 +64,7 @@ const apiRoutes = require('./controllers/beers-api');
 app.use('/api', apiRoutes);
 app.use(profileRouter);
 app.use(eventRouter);
-
+app.use(breweryRouter);
 // Define any API routes before this runs
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
@@ -70,8 +72,8 @@ app.get("*", (req, res) => {
 app.get("*", (req, res) => {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
-// app.post('/signin', Authentication.signin)
-// app.post('/signup', Authentication.signup)
+
+
 
 
 

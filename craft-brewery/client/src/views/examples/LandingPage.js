@@ -10,6 +10,7 @@ import {
   CardTitle,
   Container,
   Row,
+  Table,
   Col
 } from "reactstrap";
 
@@ -19,175 +20,76 @@ import LandingPageHeader from "components/Headers/LandingPageHeader.js";
 import FooterWhite from "components/Footers/FooterWhite.js";
 
 
+import axios from "axios";
 
-function LandingPage() {
-  document.documentElement.classList.remove("nav-open");
-  React.useEffect(() => {
-    document.body.classList.add("landing-page");
-    window.scrollTo(0, 0);
-    document.body.scrollTop = 0;
-    return function cleanup() {
-      document.body.classList.remove("landing-page");
+export default class LandingPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "name",
+      description: "description",
+      locality: "city",
+      streetAddress: "address",
+      website: "website"
     };
-  });
+  }
+  handlebrewery = () => {    
+    axios.post('/brewery',this.state).then(res => {
+      console.log(res)
+    })
+    .catch (err => {
+      alert("ruhroh raggy");
+    })
+  }
+  handleChange = (event) => {
+    const { name, value } = event.target || event.srcElement;
+    this.setState({
+      [name]: value
+    });
+  }
+  
+ render(){
   return (
-    <>
-      <MultiDropdownNavbar />
+    <>      <MultiDropdownNavbar />
       <LandingPageHeader />
       <div className="wrapper">
         <div className="section text-center landing-section">
           <Container>
             <Row>
               <Col className="ml-auto mr-auto" md="8">
-                <h2 className="title">Local Brewery Events</h2>
+                {/* <h2 className="title">Local Brewery Events</h2> */}
         {/* section */}
         <div className="section section-blog">
           <Container>
-            {/* <Row> */}
-              {/* <Col md="4">
-                <Card className="card-blog">
-                  <div className="card-image">
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img img-raised"
-                        src={require("assets/img/bitter.jfif")}
-                      />
-                    </a>
-                  </div>
-                  <CardBody>
-                    <h6 className="card-category text-info">Enterprise</h6>
-                    <CardTitle tag="h5">
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
-                        LinkedIn’s new desktop app arrives
-                      </a>
-                    </CardTitle>
-                    <p className="card-description">
-                      LinkedIn is today launching its official desktop
-                      application for Windows 10, allowing the professional
-                      social networking service to... <br />
-                    </p>
-                    <hr />
-                    <CardFooter>
-                      <div className="author">
-                        <a href="#pablo" onClick={e => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="avatar img-raised mr-2"
-                            src={require("assets/img/bitter.jfif")}
-                            />
-                          <span>Mike John</span>
-                        </a>
-                      </div>
-                      <div className="stats">
-                        <i className="fa fa-clock-o mr-1" />5 min read
-                      </div>
-                    </CardFooter>
-                  </CardBody>
-                </Card> */}
-              {/* </Col>  */}
-              {/* <Col md="4">
-                <Card className="card-blog">
-                  <div className="card-image">
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img img-raised"
-                        src={require("assets/img/bitter.jfif")}
-                      />
-                    </a>
-                  </div>
-                  <CardBody>
-                    <h6 className="card-category text-success">Startups</h6>
-                    <CardTitle tag="h5">
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
-                        MIT’s Cheetah 3 robot is built to save lives
-                      </a>
-                    </CardTitle>
-                    <p className="card-description">
-                      The latest version of MIT’s Cheetah robot made its stage
-                      debut today at TC Sessions: Robotics in Cambridge, Mass.
-                      It’s a familiar project... <br />
-                    </p>
-                    <hr />
-                    <CardFooter>
-                      <div className="author">
-                        <a href="#pablo" onClick={e => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="avatar img-raised mr-2"
-                            src={require("assets/img/bitter.jfif")}
-                            />
-                          <span>Nickie Kelly</span>
-                        </a>
-                      </div>
-                      <div className="stats">
-                        <i className="fa fa-clock-o mr-1" />5 min read
-                      </div>
-                    </CardFooter>
-                  </CardBody>
-                </Card>
-              // </Col> */}
-              {/* <Col md="4">
-                <Card className="card-blog">
-                  <div className="card-image">
-                    <a href="#pablo" onClick={e => e.preventDefault()}>
-                      <img
-                        alt="..."
-                        className="img img-raised"
-                        src={require("assets/img/bitter.jfif")}
-                      />
-                    </a>
-                  </div>
-                  <CardBody>
-                    <h6 className="card-category text-danger">
-                      <i className="fa fa-free-code-camp mr-1" />
-                      Enterprise
-                    </h6>
-                    <CardTitle tag="h5">
-                      <a href="#pablo" onClick={e => e.preventDefault()}>
-                        Lionel Richie says “Hello” to startup investors
-                      </a>
-                    </CardTitle>
-                    <p className="card-description">
-                      Because developing a doctor-on-demand service that would
-                      allow personalized medical visits, booked through an app
-                      on a user’s phone is... <br />
-                    </p>
-                    <hr />
-                    <CardFooter>
-                      <div className="author">
-                        <a href="#pablo" onClick={e => e.preventDefault()}>
-                          <img
-                            alt="..."
-                            className="avatar img-raised mr-2"
-                            src={require("assets/img/bitter.jfif")}
-                            />
-                          <span>Mike John</span>
-                        </a>
-                      </div>
-                      <div className="stats">
-                        <i className="fa fa-clock-o mr-1" />5 min read
-                      </div>
-                    </CardFooter>
-                  </CardBody>
-                </Card>
-              </Col> */}
-            {/* </Row> */}
+      
+              <h4 className="title">
+                <small>Breweries Near Me</small>
+              </h4>
+              <Table method="GET"> 
+                <thead>
+                  <tr>
+                    <th onChange={this.handleChange} name="breweryname">Brewery Name</th>                               
+                    <th onChange={this.handleChange} name="address">Adress</th>
+                    <th onChange={this.handleChange} name="city">City</th>
+                    <th onChange={this.handleChange} name="description">Description</th>
+                    <th onChange={this.handleChange} name="website">Website</th>
+                    
+                  </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+              </Table>
+
           </Container>
         </div> 
         {/* section */}
 
                 <br />
-                <Button
-                  className="btn-fill btn-round"
-                  color="danger"
-                  href="#pablo"
-                  onClick={e => e.preventDefault()}
-                >
+                <Button onClick={this.handleBrewery} block className="btn-round" color="default">
                   See Details
                 </Button>
-              </Col> */}
+              </Col> 
             </Row>
             <br />
             <br />
@@ -223,30 +125,6 @@ function LandingPage() {
                     </p>
                   </CardBody>
                   <CardFooter className="text-center">
-                    {/* <Button
-                      className="btn-link btn-just-icon mr-1"
-                      color="twitter"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button
-                      className="btn-link btn-just-icon mr-1"
-                      color="dribbble"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-dribbble" />
-                    </Button>
-                    <Button
-                      className="btn-link btn-just-icon"
-                      color="linkedin"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-linkedin" />
-                    </Button> */}
                   </CardFooter>
                 </Card>
               </Col>
@@ -273,32 +151,6 @@ function LandingPage() {
                     <br />
                     <br />
                   </CardBody>
-                  {/* <CardFooter className="text-center">
-                    <Button
-                      className="btn-link btn-just-icon mr-1"
-                      color="twitter"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-twitter" />
-                    </Button>
-                    <Button
-                      className="btn-link btn-just-icon mr-1"
-                      color="dribbble"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-dribbble" />
-                    </Button>
-                    <Button
-                      className="btn-link btn-just-icon"
-                      color="linkedin"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-linkedin" />
-                    </Button>
-                  </CardFooter> */}
                 </Card>
               </Col>
               <Col md="3">
@@ -327,32 +179,6 @@ function LandingPage() {
                     <br />
                     <br />
                   </CardBody>
-                  {/* <CardFooter className="text-center"> */}
-                     {/* <Button
-                      className="btn-link btn-just-icon mr-1"
-                      color="twitter"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    > */}
-                      {/* <i className="fa fa-twitter" />
-                    </Button>
-                    <Button
-                      className="btn-link btn-just-icon mr-1"
-                      color="dribbble"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-dribbble" />
-                    </Button>
-                    <Button
-                      className="btn-link btn-just-icon"
-                      color="linkedin"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-linkedin" />
-                    </Button> 
-                  </CardFooter> */}
                 </Card>
               </Col>
               <Col md="3">
@@ -382,30 +208,6 @@ function LandingPage() {
                     <br />
                   </CardBody>
                   <CardFooter className="text-center">
-                    {/* <Button
-                      className="btn-link btn-just-icon mr-1"
-                      color="twitter"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-twitter" />
-                    </Button> */}
-                    {/* <Button
-                      className="btn-link btn-just-icon mr-1"
-                      color="dribbble"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-dribbble" />
-                    </Button> */}
-                    {/* <Button
-                      className="btn-link btn-just-icon"
-                      color="linkedin"
-                      href="#pablo"
-                      onClick={e => e.preventDefault()}
-                    >
-                      <i className="fa fa-linkedin" />
-                    </Button> */}
                   </CardFooter>
                 </Card>
               </Col>
@@ -413,44 +215,14 @@ function LandingPage() {
           </Container>
         </div>
         <div className="section landing-section">
-          {/* <Container>
-            <Row>
-              <Col className="ml-auto mr-auto" md="8">
-                <h2 className="text-center">Keep in touch?</h2>
-                <Form className="contact-form">
-                  <Row>
-                    <Col md="6">
-                      <label>Name</label>
-                      <Input placeholder="Name" />
-                    </Col>
-                    <Col md="6">
-                      <label>Email</label>
-                      <Input placeholder="Email" />
-                    </Col>
-                  </Row>
-                  <label>Message</label>
-                  <Input
-                    placeholder="Tell us your thoughts and feelings..."
-                    type="textarea"
-                    rows="4"
-                  />
-                  <Row>
-                    <Col className="offset-md-4" md="4">
-                      <Button className="btn-fill" color="danger" size="lg">
-                        Send Message
-                      </Button>
-                    </Col>
-                  </Row>
-                </Form>
-              </Col>
-            </Row>
-          </Container> */}
         </div>
         
       </div>
       <FooterWhite />
     </>
   );
-}
+   }
+  }
 
-export default LandingPage;
+
+
