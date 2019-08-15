@@ -69,7 +69,7 @@ export default class LandingPageForm extends React.Component {
                   <div className="content-center">
                     <Container>
                       <Row>
-                        <Col className="ml-auto mr-auto text-center" md="8">
+                        <Col className="ml-auto mr-auto text-center" md="8" id="api-form">
                           <h1 className="title">
                             <strong>Tap It DFW</strong>
                           </h1>
@@ -83,16 +83,22 @@ export default class LandingPageForm extends React.Component {
                           <br />
                           <br />
                         </Col>
-                        <Col className="ml-auto mr-auto" md="10">
+                        <Col className="ml-auto mr-auto" md="6">
                           <h4 id="search-head">
                             <strong>Find a brewery near you.</strong>
+                            <br />
+                            <br />
+                            <br />
                           </h4>
-                          <Card className="card-raised card-form-horizontal no-transition">
+                          <Card style={{opacity: '0.8'}} className="card-raised card-form-horizontal no-transition">
                             <CardBody>
+                              
                             <Form className="api-form" method="GET" >
                                 <Row>
                                   <Col md="4">
                                   <Input onChange={this.handleChange} placeholder="city" type="text" name="city" />
+                                  </Col>
+                                  <Col md='4'>
                                   <Input onChange={this.handleChange} placeholder="state" type="text" name='state' />
                                   </Col>
 
