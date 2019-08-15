@@ -202,7 +202,7 @@ function LandingPage() {
               <Col md="3">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
-                    <a href="https://www.deepellumbrewing.com/" target="_blank">
+                    <a href="https://www.deepellumbrewing.com/" target="_blank" rel="noopener noreferrer" >
                       <img
                         alt="..."
                         src={require("assets/img/deep.png")}
@@ -253,7 +253,7 @@ function LandingPage() {
               <Col md="3">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
-                    <a href="https://rahrbrewing.com/" target="_blank">
+                    <a href="https://rahrbrewing.com/"target="_blank" rel="noopener noreferrer">
                       <img
                         alt="..."
                         src={require("assets/img/Rahr-Brewery.jpg")}
@@ -304,7 +304,7 @@ function LandingPage() {
               <Col md="3">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
-                    <a href="https://www.communitybeer.com/" target="_blank">
+                    <a href="https://www.communitybeer.com/"target="_blank" rel="noopener noreferrer">
                       <img
                         alt="..."
                         src={require("assets/img/community.jpg")}
@@ -358,7 +358,7 @@ function LandingPage() {
               <Col md="3">
                 <Card className="card-profile card-plain">
                   <div className="card-avatar">
-                    <a href="http://pantherislandbrewing.com/" target="_blank">
+                    <a href="http://pantherislandbrewing.com/"target="_blank" rel="noopener noreferrer">
                       <img
                         alt="..."
                         src={require("assets/img/panther.jpeg")}
@@ -366,7 +366,7 @@ function LandingPage() {
                     </a>
                   </div>
                   <CardBody>
-                    <a href="http://pantherislandbrewing.com/" target="_blank">
+                    <a href="http://pantherislandbrewing.com/"target="_blank" rel="noopener noreferrer">
                       <div className="author">
                         <CardTitle tag="h5">Panther Island Brewing</CardTitle>
                         <h6 className="card-category text-muted">Fort Worth, TX</h6>

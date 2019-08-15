@@ -27,7 +27,7 @@ export default class RegisterPage extends React.Component  {
 
     }
   }
-  handle = (event) => {
+  handleLogin = (event) => {
     // event.preventDefault();
     axios.get('/profiles/',this.state).then(res => {
       window.location = '/landing-page'

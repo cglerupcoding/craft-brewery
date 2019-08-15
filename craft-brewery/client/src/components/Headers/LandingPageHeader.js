@@ -3,7 +3,6 @@ import React from "react";
 // reactstrap components
 import {
   Container,
-  FormGroup,
   Input,
   Col,
   Button,
@@ -25,18 +24,25 @@ export default class LandingPageForm extends React.Component {
     };
   }
 
-  handleEvents = event => {
+  handleApi = event => {
     event.preventDefault();
-    axios.get('/searchBrewery/:city/:state', this.state).then(res => {
-      console.log(res);
+    axios.get('https://api.brewerydb.com/v2/locations?key=92d341b4fae6f216a0f4c979d51501cd', {
+      params: {
+        locality: "",
+        region: ""
+      }
+    })
+    .then(function (response) {
+      console.log(response);
+      // resultElement.innerHTML = generateSuccessHTMLOutput(response);
+    })
+    };
+  handleChange = (event) => {
+    const { name, value } = event.target || event.srcElement;
+    this.setState({
+      [name]: value
     });
-  };
-  // handleChange = (event) => {
-  //   const { name, value } = event.target || event.srcElement;
-  //   this.setState({
-  //     [name]: value
-  //   });
-  // }  
+  }  
 
 
     render(){
@@ -83,33 +89,18 @@ export default class LandingPageForm extends React.Component {
                           </h4>
                           <Card className="card-raised card-form-horizontal no-transition">
                             <CardBody>
-                              <Form action="" method="GET">
+                            <Form className="api-form" method="GET" >
                                 <Row>
                                   <Col md="4">
-                                    <FormGroup>
-                                      <Input
-                                        onChange={this.handleCall}
-                                        placeholder="city"
-                                        type="text"
-                                        name="city"
-                                      />
-                                    </FormGroup>
-                                  </Col>
-                                  <Col md="4">
-                                    <FormGroup>
-                                      <Input
-                                        onChange={this.handleCall}
-                                        placeholder="state"
-                                        type="text"
-                                        name="state"
-                                      />
-                                    </FormGroup>
+                                  <Input onChange={this.handleChange} placeholder="city" type="text" name="city" />
+                                  <Input onChange={this.handleChange} placeholder="state" type="text" name='state' />
                                   </Col>
 
                                   <Col md="3">
-                                  <Button onClick={this.handleRegister} block className="btn-round" color="default" method = 'GET'>
-                                      <i className="nc-icon nc-zoom-split" /> Search
-                                </Button>
+                                  <Button onClick={this.handleApi} block className="btn-round" color="default">
+                                    Login
+                                  </Button>
+
                                   </Col>
                                 </Row>
                               </Form>

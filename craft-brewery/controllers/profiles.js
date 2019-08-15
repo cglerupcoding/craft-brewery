@@ -102,11 +102,25 @@ router.post('/profiles', function(req, res){
     // });
 })
 
-router.delete('/profiles/:id', function(req, res){
-    Profile.remove({ _id: req.params.id }).then(function(dbProfile) {
-        res.json(dbProfile);
+// router.delete('/profiles/:id', function(req, res){
+//     Profile.remove({ _id: req.params.id }).then(function(dbProfile) {
+//         res.json(dbProfile);
+//   });
+// })
+
+// GET /logout
+router.get('/logout', function(req, res, next) {
+    if (req.session) {
+      // delete session object
+      req.session.destroy(function(err) {
+        if(err) {
+          return next(err);
+        } else {
+          return res.redirect('/');
+        }
+      });
+    }
   });
-})
 
 
 module.exports = router;

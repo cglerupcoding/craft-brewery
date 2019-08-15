@@ -15,7 +15,7 @@ const API_KEY = process.env.REACT_APP_BREWERYDB_API_KEY;
 // });
 
 //craft brewery location search
-router.get('/searchBrewery/:city/:state', function(req,res) {
+router.get('/beer', function(req,res) {
     axios.get(`https://api.brewerydb.com/v2/locations?key=${API_KEY}&locality=${req.params.city}&region=${req.params.state}
     `)
     .then(function(response){
